@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo | Engenharia Informática</title>
+    <!-- Adicionei a fonte "Caveat" para o texto escrito à mão nas fotos turísticas -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --inner-card-bg: #fdfdfd;
+            --primary-color: #2b8a3e;
+            --secondary-color: #40c057;
+            --accent-color: #ebfbee;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --inner-card-bg: #2a2a2a;
+            --primary-color: #69db7c;
+            --secondary-color: #51cf66;
+            --accent-color: #14532d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: left;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .photo-container {
+            flex: 0 0 150px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-info i {
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ----- SECÇÃO TURÍSTICA (POLAROIDS) ----- */
+        .tourist-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        .polaroid {
+            background-color: #fff;
+            padding: 15px 15px 25px 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            width: 220px;
+            text-align: center;
+            border-radius: 2px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        [data-theme="dark"] .polaroid {
+            background-color: #f0f0f0; 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+        }
+
+        .polaroid:nth-child(1) {
+            transform: rotate(-4deg);
+        }
+
+        .polaroid:nth-child(2) {
+            transform: rotate(5deg);
+        }
+
+        .polaroid:hover {
+            transform: scale(1.08) rotate(0deg);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+        }
+
+        .polaroid p {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            color: #222;
+            margin-top: 15px;
+            line-height: 1;
+        }
+
+        /* ----- PROJETO QR ----- */
+        .project-item-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .qr-container {
+            flex: 0 0 120px;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 10px;
+            background-color: var(--inner-card-bg);
+        }
+
+        .qr-container img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+
+        .qr-text {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* ----- EDUCAÇÃO COM LOGOTIPOS ----- */
+        .item-with-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: var(--inner-card-bg);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+            transition: var(--transition);
+            margin-bottom: 20px;
+        }
+
+        .item-with-logo:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-with-logo:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+
+        .logo-thumbnail {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 8px;
+            border: 1px solid var(--accent-color);
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .item-date {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .item-subtitle {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: gray;
+        }
+
+        /* ----- COMPETÊNCIAS ----- */
+        .skills-category-title {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 5px;
+        }
+        
+        [data-theme="dark"] .skills-category-title {
+            border-bottom: 1px dashed #444;
+        }
+
+        .skills-category-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .skills-category-title i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        ul.styled-list {
+            list-style-type: none;
+        }
+
+        ul.styled-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        ul.styled-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* ----- RESPONSIVIDADE ----- */
+        @media (max-width: 600px) {
+            .header-content, .project-item-container, .item-with-logo {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            .photo-container, .logo-thumbnail {
+                margin: 0 auto 15px auto;
+            }
+            .item-with-logo {
+                border-left: none;
+                border-top: 4px solid var(--secondary-color);
+            }
+            .item-header {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <button class="theme-toggle" id="theme-toggle" title="Alternar Modo Escuro/Claro">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="header-content">
+                <div class="photo-container">
+                    <img src="eu.jpg" alt="Foto de Catarina Pereira de Matos">
+                </div>
+                <div class="header-text">
+                    <h1>Catarina Pereira de Matos</h1>
+                    <p class="subtitle">Engenheira Informática | SAP | Robótica</p>
+                    <div class="contact-info">
+                        <span><i class="fas fa-map-marker-alt"></i> Caldas da Rainha, Portugal</span>
+                        <a href="mailto:catarina12112.cm@gmail.com"><i class="fas fa-envelope"></i> catarina12112.cm@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/catarina-matos-0858b713a/" target="_blank"><i class="fab fa-linkedin"></i> catarina-matos</a>
+                        <a href="https://github.com/catmat111" target="_blank"><i class="fab fa-github"></i> catmat111</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="sobre">
+            <h2><i class="fas fa-user"></i> Perfil Profissional</h2>
+            <p>Recém-licenciada em Engenharia Informática, com formação complementar em Sistemas de Gestão Empresarial (SAP). Sou uma profissional empenhada, com forte espírito de entreajuda e vontade de aprender. Procuro integrar projetos tecnológicos estimulantes, englobando áreas desde o desenvolvimento de software e <em>soft-robotics</em> até à criação e análise de <em>dashboards</em> e relatórios de suporte à decisão.</p>
+        </section>
+
+        <section id="percurso">
+            <h2><i class="fas fa-map-marked-alt"></i> O Meu Percurso</h2>
+            <p>O meu caminho entre as minhas raízes e o meu desenvolvimento académico:</p>
+            <div class="tourist-container">
+                <div class="polaroid">
+                    <img src="caldas.jpg" alt="Vista das Caldas da Rainha">
+                    <p>Caldas da Rainha <br><span style="font-size: 1rem; color: #666;">(A minha casa)</span></p>
+                </div>
+                <div class="polaroid">
+                    <img src="tomar.jpg" alt="Vista da cidade de Tomar">
+                    <p>Tomar <br><span style="font-size: 1rem; color: #666;">(Onde me formei)</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projeto">
+            <h2><i class="fas fa-robot"></i> Projeto de Destaque</h2>
+            <div class="project-item-container">
+                <div class="project-text">
+                    <div class="item">
+                        <div class="item-header">
+                            <span class="item-title">Simulação de Peixe em <em>Soft-Robotics</em></span>
+                            <span class="item-date">Projeto Final de Licenciatura</span>
+                        </div>
+                        <p>Desenvolvimento e simulação do comportamento e mecânica de um peixe utilizando os princípios de <em>soft-robotics</em>. A simulação foi desenvolvida com recurso ao <strong>NVIDIA Isaac Sim</strong>, englobando modelação física, implementação de algoritmos de movimento e testes iterativos de resposta ambiental.</p>
+                    </div>
+                </div>
+                <div class="qr-container">
+                    <img src="qr.png" alt="QR code para mais informações sobre o projeto">
+                    <p class="qr-text">Saber mais</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="educacao">
+            <h2><i class="fas fa-graduation-cap"></i> Educação</h2>
+            
+            <div class="item-with-logo">
+                <img src="ipt_tomar.png" alt="Logo do Instituto Politécnico de Tomar" class="logo-thumbnail">
+                <div class="item-content">
+                    <div class="item-header">
+                        <span class="item-title">Licenciatura em Engenharia Informática</span>
+                        <span class="item-date">2026</span>
+                    </div>
+                    <div class="item-subtitle">Instituto Politécnico de Tomar</div>
+                </div>
+            </div>
+
+            <div class="item-with-logo">
+                <img src="ipt_tomar.png" alt="Logo do Instituto Politécnico de Tomar" class="logo-thumbnail">
+                <div class="item-content">
+                    <div class="item-header">
+                        <span class="item-title">Pós-Graduação em Sistemas de Gestão Empresarial (SAP)</span>
+                        <span class="item-date">Concluída</span>
+                    </div>
+                    <div class="item-subtitle">Instituto Politécnico de Tomar</div>
+                </div>
+            </div>
+
+            <div class="item-with-logo">
+                <img src="bordalo.jpg" alt="Logo da Escola Rafael Bordalo Pinheiro" class="logo-thumbnail">
+                <div class="item-content">
+                    <div class="item-header">
+                        <span class="item-title">Ensino Secundário</span>
+                        <span class="item-date">Concluído</span>
+                    </div>
+                    <div class="item-subtitle">Escola Secundária Rafael Bordalo Pinheiro, Caldas da Rainha</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="competencias">
+            <h2><i class="fas fa-code"></i> Competências Técnicas</h2>
+            
+            <h3 class="skills-category-title"><i class="fas fa-laptop-code"></i> Linguagens & Tecnologias</h3>
+            <div class="skills-container">
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">SQL</span>
+            </div>
+
+            <h3 class="skills-category-title"><i class="fas fa-microchip"></i> Hardware & Ferramentas</h3>
+            <div class="skills-container">
+                <span class="skill-tag">NVIDIA Isaac Sim</span>
+                <span class="skill-tag">Raspberry Pi</span>
+                <span class="skill-tag">Arduino</span>
+                <span class="skill-tag">Sistemas SAP (ERP)</span>
+            </div>
+
+            <h3 class="skills-category-title"><i class="fas fa-project-diagram"></i> Áreas de Foco</h3>
+            <div class="skills-container">
+                <span class="skill-tag">Desenvolvimento de Software</span>
+                <span class="skill-tag">Soft-Robotics</span>
+                <span class="skill-tag">Criação de Dashboards</span>
+                <span class="skill-tag">Análise de Dados (Relatórios)</span>
+            </div>
+        </section>
+
+        <section id="extra">
+            <h2><i class="fas fa-plus-circle"></i> Informação Adicional & Interesses</h2>
+            <ul class="styled-list">
+                <li><strong>Soft Skills:</strong> Elevado sentido de responsabilidade, facilidade de comunicação, gosto por ajudar o próximo e forte capacidade analítica.</li>
+                <li><strong>Interesses:</strong> Leitura, videojogos e trabalhos manuais (atividades que promovem o foco, a criatividade e a destreza).</li>
+                <li><strong>Mobilidade:</strong> Carta de Condução (Categoria B).</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let targetTheme = 'light';
+
+            if (theme === 'light' || !theme) {
+                targetTheme = 'dark';
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                targetTheme = 'light';
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            localStorage.setItem('theme', targetTheme);
+        });
+    </script>
+</body>
+</html>
+```
