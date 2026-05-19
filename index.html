@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo | Engenharia Informática</title>
-    <!-- Adicionei a fonte "Caveat" para o texto escrito à mão nas fotos turísticas -->
+    <title>Currículo | Catarina Pereira de Matos</title>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -142,11 +141,6 @@
             transition: var(--transition);
         }
 
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-        }
-
         h2 {
             font-size: 1.5rem;
             color: var(--secondary-color);
@@ -175,7 +169,6 @@
             text-align: center;
             border-radius: 2px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
         }
 
         [data-theme="dark"] .polaroid {
@@ -183,19 +176,8 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.5);
         }
 
-        .polaroid:nth-child(1) {
-            transform: rotate(-4deg);
-        }
-
-        .polaroid:nth-child(2) {
-            transform: rotate(5deg);
-        }
-
-        .polaroid:hover {
-            transform: scale(1.08) rotate(0deg);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
+        .polaroid:nth-child(1) { transform: rotate(-4deg); }
+        .polaroid:nth-child(2) { transform: rotate(5deg); }
 
         .polaroid img {
             width: 100%;
@@ -212,7 +194,7 @@
             line-height: 1;
         }
 
-        /* ----- PROJETO QR ----- */
+        /* ----- PROJETOS E EXPERIÊNCIA ----- */
         .project-item-container {
             display: flex;
             align-items: flex-start;
@@ -234,12 +216,16 @@
             object-fit: contain;
         }
 
-        .qr-text {
-            font-size: 0.8rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-top: 5px;
+        .item { margin-bottom: 20px; }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
         }
+        .item-title { font-weight: 600; font-size: 1.1rem; }
+        .item-date { font-size: 0.9rem; color: var(--primary-color); font-weight: 600; }
+        .item-subtitle { font-style: italic; font-size: 0.95rem; color: gray; margin-bottom: 10px;}
 
         /* ----- EDUCAÇÃO COM LOGOTIPOS ----- */
         .item-with-logo {
@@ -250,17 +236,7 @@
             padding: 15px;
             border-radius: 10px;
             border-left: 4px solid var(--secondary-color);
-            transition: var(--transition);
             margin-bottom: 20px;
-        }
-
-        .item-with-logo:last-child {
-            margin-bottom: 0;
-        }
-
-        .item-with-logo:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
         }
 
         .logo-thumbnail {
@@ -273,36 +249,9 @@
             border-radius: 8px;
             border: 1px solid var(--accent-color);
         }
+        .item-content { flex: 1; }
 
-        .item-content {
-            flex: 1;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 5px;
-        }
-
-        .item-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .item-date {
-            font-size: 0.9rem;
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .item-subtitle {
-            font-style: italic;
-            font-size: 0.95rem;
-            color: gray;
-        }
-
-        /* ----- COMPETÊNCIAS ----- */
+        /* ----- COMPETÊNCIAS E LISTAS ----- */
         .skills-category-title {
             font-size: 1.1rem;
             color: var(--text-color);
@@ -311,19 +260,7 @@
             border-bottom: 1px dashed #ccc;
             padding-bottom: 5px;
         }
-        
-        [data-theme="dark"] .skills-category-title {
-            border-bottom: 1px dashed #444;
-        }
-
-        .skills-category-title:first-of-type {
-            margin-top: 0;
-        }
-
-        .skills-category-title i {
-            color: var(--primary-color);
-            margin-right: 8px;
-        }
+        [data-theme="dark"] .skills-category-title { border-bottom: 1px dashed #444; }
 
         .skills-container {
             display: flex;
@@ -339,26 +276,15 @@
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
-            transition: var(--transition);
             cursor: default;
         }
 
-        .skill-tag:hover {
-            background-color: var(--primary-color);
-            color: #fff;
-            transform: scale(1.05);
-        }
-
-        ul.styled-list {
-            list-style-type: none;
-        }
-
+        ul.styled-list { list-style-type: none; }
         ul.styled-list li {
             position: relative;
             padding-left: 20px;
             margin-bottom: 8px;
         }
-
         ul.styled-list li::before {
             content: "▹";
             position: absolute;
@@ -366,26 +292,15 @@
             color: var(--primary-color);
         }
 
-        /* ----- RESPONSIVIDADE ----- */
+        /* Responsividade */
         @media (max-width: 600px) {
             .header-content, .project-item-container, .item-with-logo {
-                flex-direction: column;
-                text-align: center;
+                flex-direction: column; text-align: center;
             }
-            .contact-info {
-                justify-content: center;
-            }
-            .photo-container, .logo-thumbnail {
-                margin: 0 auto 15px auto;
-            }
-            .item-with-logo {
-                border-left: none;
-                border-top: 4px solid var(--secondary-color);
-            }
-            .item-header {
-                flex-direction: column;
-                align-items: center;
-            }
+            .contact-info { justify-content: center; }
+            .photo-container, .logo-thumbnail { margin: 0 auto 15px auto; }
+            .item-with-logo { border-left: none; border-top: 4px solid var(--secondary-color); }
+            .item-header { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -405,69 +320,62 @@
                     <p class="subtitle">Engenheira Informática | SAP | Robótica</p>
                     <div class="contact-info">
                         <span><i class="fas fa-map-marker-alt"></i> Caldas da Rainha, Portugal</span>
+                        <a href="tel:+351900000000"><i class="fas fa-phone"></i> +351 969543438</a>
                         <a href="mailto:catarina12112.cm@gmail.com"><i class="fas fa-envelope"></i> catarina12112.cm@gmail.com</a>
-                        <a href="https://www.linkedin.com/in/catarina-matos-0858b713a/" target="_blank"><i class="fab fa-linkedin"></i> catarina-matos</a>
-                        <a href="https://github.com/catmat111" target="_blank"><i class="fab fa-github"></i> catmat111</a>
+                        <a href="https://www.linkedin.com/in/catarina-matos-0858b713a/" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/catarina-matos-0858b713a</a>
+                        <a href="https://github.com/catmat111" target="_blank"><i class="fab fa-github"></i> github.com/catmat111</a>
                     </div>
                 </div>
             </div>
         </header>
 
-        <section id="sobre">
-            <h2><i class="fas fa-user"></i> Perfil Profissional</h2>
+        <section id="summary">
+            <h2><i class="fas fa-user"></i> Resumo Profissional</h2>
             <p>Recém-licenciada em Engenharia Informática, com formação complementar em Sistemas de Gestão Empresarial (SAP). Sou uma profissional empenhada, com forte espírito de entreajuda e vontade de aprender. Procuro integrar projetos tecnológicos estimulantes, englobando áreas desde o desenvolvimento de software e <em>soft-robotics</em> até à criação e análise de <em>dashboards</em> e relatórios de suporte à decisão.</p>
         </section>
 
-        <section id="percurso">
-            <h2><i class="fas fa-map-marked-alt"></i> O Meu Percurso</h2>
-            <p>O meu caminho entre as minhas raízes e o meu desenvolvimento académico:</p>
-            <div class="tourist-container">
-                <div class="polaroid">
-                    <img src="caldas.jpg" alt="Vista das Caldas da Rainha">
-                    <p>Caldas da Rainha <br><span style="font-size: 1rem; color: #666;">(A minha casa)</span></p>
-                </div>
-                <div class="polaroid">
-                    <img src="tomar.jpg" alt="Vista da cidade de Tomar">
-                    <p>Tomar <br><span style="font-size: 1rem; color: #666;">(Onde me formei)</span></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projeto">
-            <h2><i class="fas fa-robot"></i> Projeto de Destaque</h2>
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Experiência & Projetos Práticos</h2>
             <div class="project-item-container">
                 <div class="project-text">
                     <div class="item">
                         <div class="item-header">
-                            <span class="item-title">Simulação de Peixe em <em>Soft-Robotics</em></span>
-                            <span class="item-date">Projeto Final de Licenciatura</span>
+                            <span class="item-title">Investigadora & Desenvolvedora: Simulação em <em>Soft-Robotics</em></span>
+                            <span class="item-date">2025 - 2026</span>
                         </div>
-                        <p>Desenvolvimento e simulação do comportamento e mecânica de um peixe utilizando os princípios de <em>soft-robotics</em>. A simulação foi desenvolvida com recurso ao <strong>NVIDIA Isaac Sim</strong>, englobando modelação física, implementação de algoritmos de movimento e testes iterativos de resposta ambiental.</p>
+                        <div class="item-subtitle">Projeto Final de Licenciatura | Instituto Politécnico de Tomar</div>
+                        <ul class="styled-list">
+                            <li>Liderou o desenvolvimento e a simulação de mecânica de fluidos e comportamento de um peixe robótico utilizando o <strong>NVIDIA Isaac Sim</strong>.</li>
+                            <li>Aplicou lógica de programação avançada em <strong>Python</strong> e <strong>C#</strong> para implementar os algoritmos de movimento e analisar testes iterativos de resposta ambiental.</li>
+                            <li>Criou interfaces e visualizações de dados utilizando <strong>JavaScript</strong> e <strong>React</strong> para apresentar os resultados da simulação.</li>
+                            <li>Geriu o armazenamento e o fluxo dos dados recolhidos durante as simulações através de bases de dados <strong>SQL</strong>.</li>
+                            <li>Integrou lógicas de hardware aplicando conhecimentos de <strong>Raspberry Pi</strong> e <strong>Arduino</strong> na conceptualização do robô.</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="qr-container">
-                    <img src="qr.png" alt="QR code para mais informações sobre o projeto">
-                    <p class="qr-text">Saber mais</p>
+                    <img src="qr.png" alt="QR code para o projeto">
+                    <p style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600; margin-top: 5px;">Saber mais</p>
                 </div>
             </div>
         </section>
 
-        <section id="educacao">
+        <section id="education">
             <h2><i class="fas fa-graduation-cap"></i> Educação</h2>
             
             <div class="item-with-logo">
-                <img src="ipt_tomar.png" alt="Logo do Instituto Politécnico de Tomar" class="logo-thumbnail">
+                <img src="ipt_tomar.png" alt="Logo IPT" class="logo-thumbnail">
                 <div class="item-content">
                     <div class="item-header">
                         <span class="item-title">Licenciatura em Engenharia Informática</span>
-                        <span class="item-date">2026</span>
+                        <span class="item-date">Conclusão: 2026</span>
                     </div>
                     <div class="item-subtitle">Instituto Politécnico de Tomar</div>
                 </div>
             </div>
 
             <div class="item-with-logo">
-                <img src="ipt_tomar.png" alt="Logo do Instituto Politécnico de Tomar" class="logo-thumbnail">
+                <img src="ipt_tomar.png" alt="Logo IPT" class="logo-thumbnail">
                 <div class="item-content">
                     <div class="item-header">
                         <span class="item-title">Pós-Graduação em Sistemas de Gestão Empresarial (SAP)</span>
@@ -476,20 +384,9 @@
                     <div class="item-subtitle">Instituto Politécnico de Tomar</div>
                 </div>
             </div>
-
-            <div class="item-with-logo">
-                <img src="bordalo.jpg" alt="Logo da Escola Rafael Bordalo Pinheiro" class="logo-thumbnail">
-                <div class="item-content">
-                    <div class="item-header">
-                        <span class="item-title">Ensino Secundário</span>
-                        <span class="item-date">Concluído</span>
-                    </div>
-                    <div class="item-subtitle">Escola Secundária Rafael Bordalo Pinheiro, Caldas da Rainha</div>
-                </div>
-            </div>
         </section>
 
-        <section id="competencias">
+        <section id="skills">
             <h2><i class="fas fa-code"></i> Competências Técnicas</h2>
             
             <h3 class="skills-category-title"><i class="fas fa-laptop-code"></i> Linguagens & Tecnologias</h3>
@@ -509,24 +406,22 @@
                 <span class="skill-tag">Arduino</span>
                 <span class="skill-tag">Sistemas SAP (ERP)</span>
             </div>
+        </section>
 
-            <h3 class="skills-category-title"><i class="fas fa-project-diagram"></i> Áreas de Foco</h3>
-            <div class="skills-container">
-                <span class="skill-tag">Desenvolvimento de Software</span>
-                <span class="skill-tag">Soft-Robotics</span>
-                <span class="skill-tag">Criação de Dashboards</span>
-                <span class="skill-tag">Análise de Dados (Relatórios)</span>
+        <section id="percurso">
+            <h2><i class="fas fa-map-marked-alt"></i> O Meu Percurso</h2>
+            <div class="tourist-container">
+                <div class="polaroid">
+                    <img src="caldas.jpg" alt="Vista das Caldas da Rainha">
+                    <p>Caldas da Rainha <br><span style="font-size: 1rem; color: #666;">(A minha casa)</span></p>
+                </div>
+                <div class="polaroid">
+                    <img src="tomar.jpg" alt="Vista da cidade de Tomar">
+                    <p>Tomar <br><span style="font-size: 1rem; color: #666;">(Onde me formei)</span></p>
+                </div>
             </div>
         </section>
 
-        <section id="extra">
-            <h2><i class="fas fa-plus-circle"></i> Informação Adicional & Interesses</h2>
-            <ul class="styled-list">
-                <li><strong>Soft Skills:</strong> Elevado sentido de responsabilidade, facilidade de comunicação, gosto por ajudar o próximo e forte capacidade analítica.</li>
-                <li><strong>Interesses:</strong> Leitura, videojogos e trabalhos manuais (atividades que promovem o foco, a criatividade e a destreza).</li>
-                <li><strong>Mobilidade:</strong> Carta de Condução (Categoria B).</li>
-            </ul>
-        </section>
     </div>
 
     <script>
@@ -559,4 +454,3 @@
     </script>
 </body>
 </html>
-```
