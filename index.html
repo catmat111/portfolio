@@ -115,21 +115,57 @@
             color: var(--primary-color);
         }
 
-        .theme-toggle {
+        /* ----- CONTROLS (TEMA E IDIOMA) ----- */
+        .controls-container {
             position: absolute;
             top: 0;
             right: 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .icon-btn {
             background: none;
             border: none;
             color: var(--text-color);
             font-size: 1.5rem;
             cursor: pointer;
             transition: var(--transition);
+            font-weight: bold;
         }
 
-        .theme-toggle:hover {
+        .icon-btn:hover {
             color: var(--primary-color);
             transform: scale(1.1);
+        }
+        
+        .lang-btn {
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            border: 2px solid var(--text-color);
+            border-radius: 5px;
+            padding: 2px 6px;
+        }
+        
+        .lang-btn:hover {
+            border-color: var(--primary-color);
+        }
+
+        /* ----- CLASSES DE IDIOMA ----- */
+        .lang-en {
+            display: none;
+        }
+        
+        [data-lang="en"] .lang-en {
+            display: inline-block; /* Or block depending on context, handled below */
+        }
+        [data-lang="en"] span.lang-en, [data-lang="en"] i.lang-en, [data-lang="en"] strong.lang-en { display: inline; }
+        [data-lang="en"] p.lang-en, [data-lang="en"] div.lang-en, [data-lang="en"] h2.lang-en, [data-lang="en"] h3.lang-en, [data-lang="en"] li.lang-en { display: block; }
+        [data-lang="en"] li.lang-en { display: list-item; }
+        
+        [data-lang="en"] .lang-pt {
+            display: none !important;
         }
 
         section {
@@ -301,23 +337,31 @@
             .photo-container, .logo-thumbnail { margin: 0 auto 15px auto; }
             .item-with-logo { border-left: none; border-top: 4px solid var(--secondary-color); }
             .item-header { flex-direction: column; align-items: center; }
+            .controls-container { position: relative; justify-content: flex-end; margin-bottom: 20px;}
         }
     </style>
 </head>
-<body>
+<body data-lang="pt">
 
     <div class="container">
         <header>
-            <button class="theme-toggle" id="theme-toggle" title="Alternar Modo Escuro/Claro">
-                <i class="fas fa-moon"></i>
-            </button>
+            <div class="controls-container">
+                <button class="icon-btn lang-btn" id="lang-toggle" title="Mudar Idioma / Change Language">EN</button>
+                <button class="icon-btn theme-toggle" id="theme-toggle" title="Alternar Modo Escuro/Claro">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
             <div class="header-content">
                 <div class="photo-container">
                     <img src="eu.jpg" alt="Foto de Catarina Pereira de Matos">
                 </div>
                 <div class="header-text">
                     <h1>Catarina Pereira de Matos</h1>
-                    <p class="subtitle">Engenheira Informática | SAP | Robótica</p>
+                    <p class="subtitle">
+                        <span class="lang-pt">Engenheira Informática | SAP | Robótica</span>
+                        <span class="lang-en">Software Engineer | SAP | Robotics</span>
+                    </p>
                     <div class="contact-info">
                         <span><i class="fas fa-map-marker-alt"></i> Caldas da Rainha, Portugal</span>
                         <a href="tel:+351900000000"><i class="fas fa-phone"></i> +351 969543438</a>
@@ -330,47 +374,69 @@
         </header>
 
         <section id="summary">
-            <h2><i class="fas fa-user"></i> Resumo Profissional</h2>
-            <p>Recém-licenciada em Engenharia Informática, com formação complementar em Sistemas de Gestão Empresarial (SAP). Sou uma profissional empenhada, com forte espírito de entreajuda e vontade de aprender. Procuro integrar projetos tecnológicos estimulantes, englobando áreas desde o desenvolvimento de software e <em>soft-robotics</em> até à criação e análise de <em>dashboards</em> e relatórios de suporte à decisão.</p>
+            <h2 class="lang-pt"><i class="fas fa-user"></i> Resumo Profissional</h2>
+            <h2 class="lang-en"><i class="fas fa-user"></i> Professional Summary</h2>
+            
+            <p class="lang-pt">Recém-licenciada em Engenharia Informática, com formação complementar em Sistemas de Gestão Empresarial (SAP). Sou uma profissional empenhada, com forte espírito de entreajuda e vontade de aprender. Procuro integrar projetos tecnológicos estimulantes, englobando áreas desde o desenvolvimento de software e <em>soft-robotics</em> até à criação e análise de <em>dashboards</em> e relatórios de suporte à decisão.</p>
+            <p class="lang-en">Recent Computer Engineering graduate, with complementary training in Enterprise Management Systems (SAP). I am a dedicated professional, with a strong team spirit and a willingness to learn. I am looking to join stimulating technological projects, covering areas from software development and <em>soft-robotics</em> to the creation and analysis of dashboards and decision support reports.</p>
         </section>
 
         <section id="experience">
-            <h2><i class="fas fa-briefcase"></i> Experiência & Projetos Práticos</h2>
+            <h2 class="lang-pt"><i class="fas fa-briefcase"></i> Experiência & Projetos Práticos</h2>
+            <h2 class="lang-en"><i class="fas fa-briefcase"></i> Experience & Practical Projects</h2>
+            
             <div class="project-item-container">
                 <div class="project-text">
                     <div class="item">
                         <div class="item-header">
-                            <span class="item-title">Investigadora & Desenvolvedora: Simulação em <em>Soft-Robotics</em></span>
+                            <span class="item-title lang-pt">Investigadora & Desenvolvedora: Simulação em <em>Soft-Robotics</em></span>
+                            <span class="item-title lang-en">Researcher & Developer: <em>Soft-Robotics</em> Simulation</span>
                             <span class="item-date">2025 - 2026</span>
                         </div>
-                        <div class="item-subtitle">Projeto Final de Licenciatura | Instituto Politécnico de Tomar</div>
-                        <ul class="styled-list">
+                        <div class="item-subtitle lang-pt">Projeto Final de Licenciatura | Instituto Politécnico de Tomar</div>
+                        <div class="item-subtitle lang-en">Final Degree Project | Polytechnic Institute of Tomar</div>
+                        
+                        <ul class="styled-list lang-pt">
                             <li>Liderou o desenvolvimento e a simulação de mecânica de fluidos e comportamento de um peixe robótico utilizando o <strong>NVIDIA Isaac Sim</strong>.</li>
                             <li>Aplicou lógica de programação avançada em <strong>Python</strong> e <strong>C#</strong> para implementar os algoritmos de movimento e analisar testes iterativos de resposta ambiental.</li>
                             <li>Criou interfaces e visualizações de dados utilizando <strong>JavaScript</strong> e <strong>React</strong> para apresentar os resultados da simulação.</li>
                             <li>Geriu o armazenamento e o fluxo dos dados recolhidos durante as simulações através de bases de dados <strong>SQL</strong>.</li>
                             <li>Integrou lógicas de hardware aplicando conhecimentos de <strong>Raspberry Pi</strong> e <strong>Arduino</strong> na conceptualização do robô.</li>
                         </ul>
+                        
+                        <ul class="styled-list lang-en">
+                            <li>Led the development and simulation of fluid mechanics and behavior of a robotic fish using <strong>NVIDIA Isaac Sim</strong>.</li>
+                            <li>Applied advanced programming logic in <strong>Python</strong> and <strong>C#</strong> to implement movement algorithms and analyze iterative environmental response tests.</li>
+                            <li>Created interfaces and data visualizations using <strong>JavaScript</strong> and <strong>React</strong> to present simulation results.</li>
+                            <li>Managed the storage and flow of data collected during simulations through <strong>SQL</strong> databases.</li>
+                            <li>Integrated hardware logic applying <strong>Raspberry Pi</strong> and <strong>Arduino</strong> knowledge in the conceptualization of the robot.</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="qr-container">
-                    <img src="qr.png" alt="QR code para o projeto">
-                    <p style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600; margin-top: 5px;">Saber mais</p>
+                    <img src="qr.png" alt="QR code">
+                    <p class="lang-pt" style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600; margin-top: 5px;">Saber mais</p>
+                    <p class="lang-en" style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600; margin-top: 5px;">Learn more</p>
                 </div>
             </div>
         </section>
 
         <section id="education">
-            <h2><i class="fas fa-graduation-cap"></i> Educação</h2>
+            <h2 class="lang-pt"><i class="fas fa-graduation-cap"></i> Educação</h2>
+            <h2 class="lang-en"><i class="fas fa-graduation-cap"></i> Education</h2>
             
             <div class="item-with-logo">
                 <img src="ipt_tomar.png" alt="Logo IPT" class="logo-thumbnail">
                 <div class="item-content">
                     <div class="item-header">
-                        <span class="item-title">Licenciatura em Engenharia Informática</span>
-                        <span class="item-date">Conclusão: 2026</span>
+                        <span class="item-title lang-pt">Licenciatura em Engenharia Informática</span>
+                        <span class="item-title lang-en">Bachelor's Degree in Computer Engineering</span>
+                        
+                        <span class="item-date lang-pt">Conclusão: 2026</span>
+                        <span class="item-date lang-en">Completion: 2026</span>
                     </div>
-                    <div class="item-subtitle">Instituto Politécnico de Tomar</div>
+                    <div class="item-subtitle lang-pt">Instituto Politécnico de Tomar</div>
+                    <div class="item-subtitle lang-en">Polytechnic Institute of Tomar</div>
                 </div>
             </div>
 
@@ -378,18 +444,25 @@
                 <img src="ipt_tomar.png" alt="Logo IPT" class="logo-thumbnail">
                 <div class="item-content">
                     <div class="item-header">
-                        <span class="item-title">Pós-Graduação em Sistemas de Gestão Empresarial (SAP)</span>
-                        <span class="item-date">Concluída</span>
+                        <span class="item-title lang-pt">Pós-Graduação em Sistemas de Gestão Empresarial (SAP)</span>
+                        <span class="item-title lang-en">Postgraduate Degree in Enterprise Management Systems (SAP)</span>
+                        
+                        <span class="item-date lang-pt">Concluída</span>
+                        <span class="item-date lang-en">Completed</span>
                     </div>
-                    <div class="item-subtitle">Instituto Politécnico de Tomar</div>
+                    <div class="item-subtitle lang-pt">Instituto Politécnico de Tomar</div>
+                    <div class="item-subtitle lang-en">Polytechnic Institute of Tomar</div>
                 </div>
             </div>
         </section>
 
         <section id="skills">
-            <h2><i class="fas fa-code"></i> Competências Técnicas</h2>
+            <h2 class="lang-pt"><i class="fas fa-code"></i> Competências Técnicas</h2>
+            <h2 class="lang-en"><i class="fas fa-code"></i> Technical Skills</h2>
             
-            <h3 class="skills-category-title"><i class="fas fa-laptop-code"></i> Linguagens & Tecnologias</h3>
+            <h3 class="skills-category-title lang-pt"><i class="fas fa-laptop-code"></i> Linguagens & Tecnologias</h3>
+            <h3 class="skills-category-title lang-en"><i class="fas fa-laptop-code"></i> Languages & Technologies</h3>
+            
             <div class="skills-container">
                 <span class="skill-tag">C#</span>
                 <span class="skill-tag">Java</span>
@@ -399,7 +472,9 @@
                 <span class="skill-tag">SQL</span>
             </div>
 
-            <h3 class="skills-category-title"><i class="fas fa-microchip"></i> Hardware & Ferramentas</h3>
+            <h3 class="skills-category-title lang-pt"><i class="fas fa-microchip"></i> Hardware & Ferramentas</h3>
+            <h3 class="skills-category-title lang-en"><i class="fas fa-microchip"></i> Hardware & Tools</h3>
+            
             <div class="skills-container">
                 <span class="skill-tag">NVIDIA Isaac Sim</span>
                 <span class="skill-tag">Raspberry Pi</span>
@@ -409,15 +484,19 @@
         </section>
 
         <section id="percurso">
-            <h2><i class="fas fa-map-marked-alt"></i> O Meu Percurso</h2>
+            <h2 class="lang-pt"><i class="fas fa-map-marked-alt"></i> O Meu Percurso</h2>
+            <h2 class="lang-en"><i class="fas fa-map-marked-alt"></i> My Journey</h2>
+            
             <div class="tourist-container">
                 <div class="polaroid">
-                    <img src="caldas.jpg" alt="Vista das Caldas da Rainha">
-                    <p>Caldas da Rainha <br><span style="font-size: 1rem; color: #666;">(A minha casa)</span></p>
+                    <img src="caldas.jpg" alt="Caldas da Rainha">
+                    <p class="lang-pt">Caldas da Rainha <br><span style="font-size: 1rem; color: #666;">(A minha casa)</span></p>
+                    <p class="lang-en">Caldas da Rainha <br><span style="font-size: 1rem; color: #666;">(My home)</span></p>
                 </div>
                 <div class="polaroid">
-                    <img src="tomar.jpg" alt="Vista da cidade de Tomar">
-                    <p>Tomar <br><span style="font-size: 1rem; color: #666;">(Onde me formei)</span></p>
+                    <img src="tomar.jpg" alt="Tomar">
+                    <p class="lang-pt">Tomar <br><span style="font-size: 1rem; color: #666;">(Onde me formei)</span></p>
+                    <p class="lang-en">Tomar <br><span style="font-size: 1rem; color: #666;">(Where I graduated)</span></p>
                 </div>
             </div>
         </section>
@@ -425,6 +504,7 @@
     </div>
 
     <script>
+        // --- LOGIC PARA O TEMA ESCURO/CLARO ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = themeToggleBtn.querySelector('i');
         const currentTheme = localStorage.getItem('theme');
@@ -450,6 +530,26 @@
 
             document.documentElement.setAttribute('data-theme', targetTheme);
             localStorage.setItem('theme', targetTheme);
+        });
+
+        // --- LOGIC PARA O IDIOMA PT/EN ---
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const currentLang = localStorage.getItem('language') || 'pt';
+        
+        // Define o idioma inicial no body
+        document.body.setAttribute('data-lang', currentLang);
+        langToggleBtn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
+        document.documentElement.lang = currentLang === 'pt' ? 'pt-PT' : 'en';
+
+        langToggleBtn.addEventListener('click', () => {
+            let lang = document.body.getAttribute('data-lang');
+            let targetLang = lang === 'pt' ? 'en' : 'pt';
+            
+            document.body.setAttribute('data-lang', targetLang);
+            document.documentElement.lang = targetLang === 'pt' ? 'pt-PT' : 'en';
+            langToggleBtn.textContent = targetLang === 'pt' ? 'EN' : 'PT';
+            
+            localStorage.setItem('language', targetLang);
         });
     </script>
 </body>
