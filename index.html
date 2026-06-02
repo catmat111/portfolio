@@ -235,6 +235,15 @@
             display: flex;
             align-items: flex-start;
             gap: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 20px;
+        }
+        
+        .project-item-container:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .qr-container {
@@ -387,10 +396,9 @@
             <h2 class="lang-pt"><i class="fas fa-briefcase"></i> Experiência & Projetos de Desenvolvimento</h2>
             <h2 class="lang-en"><i class="fas fa-briefcase"></i> Experience & Development Projects</h2>
             
-            <div class="project-item-container">
+            <div class="project-item-container" style="border-bottom: none; margin-bottom: 0;">
                 <div class="project-text" style="flex: 1;">
                     
-                    <!-- Projeto FormDocs -->
                     <div class="item">
                         <div class="item-header">
                             <span class="item-title lang-pt">Desenvolvedora Full-Stack: Projeto FormDocs</span>
@@ -415,8 +423,7 @@
                         </ul>
                     </div>
 
-                    <!-- Projeto Matcha Garden -->
-                    <div class="item">
+                    <div class="item" style="margin-bottom: 40px; border-bottom: 1px solid var(--accent-color); padding-bottom: 30px;">
                         <div class="item-header">
                             <span class="item-title lang-pt">Desenvolvedora Full-Stack: Matcha Garden</span>
                             <span class="item-title lang-en">Full-Stack Developer: Matcha Garden</span>
@@ -437,14 +444,40 @@
                             <li>Exploration and integration of innovative technologies, such as <strong>Rust</strong> and the <strong>Tauri</strong> ecosystem.</li>
                         </ul>
                     </div>
-
-                </div>
-                <div class="qr-container">
-                    <img src="qr.png" alt="QR code">
-                    <p class="lang-pt" style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600; margin-top: 5px;">Ver Portfólio</p>
-                    <p class="lang-en" style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600; margin-top: 5px;">View Portfolio</p>
                 </div>
             </div>
+
+            <div class="project-item-container">
+                <div class="project-text" style="flex: 1;">
+                    <div class="item">
+                        <div class="item-header">
+                            <span class="item-title lang-pt">Engenharia de Software & Robótica: Deteção de Poluição</span>
+                            <span class="item-title lang-en">Software Engineering & Robotics: Pollution Detection</span>
+                            <span class="item-date">2025 - 2026</span>
+                        </div>
+                        <div class="item-subtitle lang-pt">Projeto Final de Licenciatura | Instituto Politécnico de Tomar</div>
+                        <div class="item-subtitle lang-en">Final Degree Project | Polytechnic Institute of Tomar</div>
+                        
+                        <ul class="styled-list lang-pt">
+                            <li>Desenvolvimento da simulação de um peixe robótico para deteção de poluição aquática, utilizando o <strong>NVIDIA Isaac Sim</strong>.</li>
+                            <li>Programação de algoritmos complexos de movimento, análise de dados e resposta ambiental utilizando <strong>Python</strong> e <strong>C#</strong>.</li>
+                            <li>Integração de mecânicas de fluidos e tratamento de dados numéricos em ambientes de simulação avançada.</li>
+                        </ul>
+                        
+                        <ul class="styled-list lang-en">
+                            <li>Developed the simulation of a robotic fish for aquatic pollution detection, utilizing <strong>NVIDIA Isaac Sim</strong>.</li>
+                            <li>Programmed complex algorithms for movement, data analysis, and environmental response using <strong>Python</strong> and <strong>C#</strong>.</li>
+                            <li>Integrated fluid mechanics and numerical data processing within advanced simulation environments.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="qr-container">
+                    <img src="qr.png" alt="QR code Simulação NVIDIA Isaac Sim">
+                    <p class="lang-pt" style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600; margin-top: 5px;">Ver Simulação</p>
+                    <p class="lang-en" style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600; margin-top: 5px;">View Simulation</p>
+                </div>
+            </div>
+
         </section>
 
         <section id="education">
@@ -496,6 +529,7 @@
                 <span class="skill-tag">Node.js</span>
                 <span class="skill-tag">Rust</span>
                 <span class="skill-tag">Python</span>
+                <span class="skill-tag">C#</span>
                 <span class="skill-tag">SQL</span>
             </div>
 
@@ -507,7 +541,7 @@
                 <span class="skill-tag">Trabalho Remoto / Ágil</span>
                 <span class="skill-tag">Git / GitHub</span>
                 <span class="skill-tag">Tauri Framework</span>
-                <span class="skill-tag">RESTful APIs</span>
+                <span class="skill-tag">NVIDIA Isaac Sim</span>
                 <span class="skill-tag">Sistemas SAP (ERP)</span>
             </div>
         </section>
