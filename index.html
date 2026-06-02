@@ -158,7 +158,7 @@
         }
         
         [data-lang="en"] .lang-en {
-            display: inline-block; /* Or block depending on context, handled below */
+            display: inline-block;
         }
         [data-lang="en"] span.lang-en, [data-lang="en"] i.lang-en, [data-lang="en"] strong.lang-en { display: inline; }
         [data-lang="en"] p.lang-en, [data-lang="en"] div.lang-en, [data-lang="en"] h2.lang-en, [data-lang="en"] h3.lang-en, [data-lang="en"] li.lang-en { display: block; }
@@ -244,6 +244,7 @@
             border-radius: 10px;
             padding: 10px;
             background-color: var(--inner-card-bg);
+            margin-top: 5px;
         }
 
         .qr-container img {
@@ -252,7 +253,8 @@
             object-fit: contain;
         }
 
-        .item { margin-bottom: 20px; }
+        .item { margin-bottom: 30px; }
+        .item:last-child { margin-bottom: 0; }
         .item-header {
             display: flex;
             justify-content: space-between;
@@ -386,32 +388,56 @@
             <h2 class="lang-en"><i class="fas fa-briefcase"></i> Experience & Development Projects</h2>
             
             <div class="project-item-container">
-                <div class="project-text">
+                <div class="project-text" style="flex: 1;">
+                    
+                    <!-- Projeto FormDocs -->
                     <div class="item">
                         <div class="item-header">
-                            <span class="item-title lang-pt">Desenvolvedora Full-Stack: Projetos Web (FormDocs & Matcha Garden)</span>
-                            <span class="item-title lang-en">Full-Stack Developer: Web Projects (FormDocs & Matcha Garden)</span>
+                            <span class="item-title lang-pt">Desenvolvedora Full-Stack: Projeto FormDocs</span>
+                            <span class="item-title lang-en">Full-Stack Developer: FormDocs Project</span>
                             <span class="item-date">2025 - 2026</span>
                         </div>
-                        <div class="item-subtitle lang-pt">Desenvolvimento Independente | Tecnologias Web Modernas</div>
-                        <div class="item-subtitle lang-en">Independent Development | Modern Web Technologies</div>
+                        <div class="item-subtitle lang-pt">Projeto Académico | Metodologia Scrum (Equipa de 6)</div>
+                        <div class="item-subtitle lang-en">Academic Project | Scrum Methodology (Team of 6)</div>
                         
                         <ul class="styled-list lang-pt">
-                            <li>Desenvolvimento de aplicações web completas (<em>frontend</em> e <em>backend</em>) com foco na experiência do utilizador e na performance.</li>
-                            <li>Criação de interfaces interativas e altamente responsivas utilizando <strong>React</strong> e <strong>TypeScript</strong>.</li>
-                            <li>Implementação de lógicas de servidor e APIs robustas utilizando <strong>Node.js</strong> e gestão de bases de dados relacionais (<strong>SQL</strong>).</li>
-                            <li>Exploração e integração de tecnologias modernas, como <strong>Rust</strong> e o ecossistema <strong>Tauri</strong>, para a criação de aplicações multiplataforma leves.</li>
-                            <li>Adoção de boas práticas de código e metodologias preparadas para fluxos de trabalho colaborativos em ambientes <strong>totalmente remotos</strong>.</li>
+                            <li>Desenvolvimento colaborativo de uma aplicação web completa (<em>frontend</em> e <em>backend</em>) num ambiente ágil, utilizando a metodologia <strong>Scrum</strong>.</li>
+                            <li>Trabalho dinâmico numa equipa de 6 pessoas, garantindo a entrega contínua de funcionalidades e a resolução eficiente de problemas.</li>
+                            <li>Criação de interfaces interativas e altamente responsivas em <strong>React</strong> e <strong>TypeScript</strong>.</li>
+                            <li>Adoção de boas práticas de código e ferramentas de controlo de versões (Git/GitHub) essenciais para fluxos de trabalho remotos.</li>
                         </ul>
                         
                         <ul class="styled-list lang-en">
-                            <li>Development of comprehensive full-stack web applications (frontend and backend) focusing on user experience and performance.</li>
+                            <li>Collaborative development of a full-stack web application in an agile environment, utilizing <strong>Scrum</strong> methodology.</li>
+                            <li>Dynamic work within a team of 6, ensuring continuous feature delivery and efficient problem-solving.</li>
                             <li>Creation of highly interactive and responsive interfaces using <strong>React</strong> and <strong>TypeScript</strong>.</li>
-                            <li>Implementation of robust server-side logic and APIs using <strong>Node.js</strong> and relational database management (<strong>SQL</strong>).</li>
-                            <li>Exploration and integration of modern technologies, such as <strong>Rust</strong> and the <strong>Tauri</strong> ecosystem, for building lightweight cross-platform apps.</li>
-                            <li>Adoption of clean code practices and methodologies tailored for collaborative workflows in <strong>fully remote</strong> environments.</li>
+                            <li>Adoption of clean code practices and version control tools (Git/GitHub) essential for remote workflows.</li>
                         </ul>
                     </div>
+
+                    <!-- Projeto Matcha Garden -->
+                    <div class="item">
+                        <div class="item-header">
+                            <span class="item-title lang-pt">Desenvolvedora Full-Stack: Matcha Garden</span>
+                            <span class="item-title lang-en">Full-Stack Developer: Matcha Garden</span>
+                            <span class="item-date">2025 - 2026</span>
+                        </div>
+                        <div class="item-subtitle lang-pt">Projeto Independente | Tecnologias Web Modernas</div>
+                        <div class="item-subtitle lang-en">Independent Project | Modern Web Technologies</div>
+                        
+                        <ul class="styled-list lang-pt">
+                            <li>Desenvolvimento autónomo de uma aplicação multiplataforma focada na performance e na experiência do utilizador.</li>
+                            <li>Implementação de lógicas de servidor e APIs robustas utilizando <strong>Node.js</strong> e gestão de bases de dados relacionais (<strong>SQL</strong>).</li>
+                            <li>Exploração e integração de tecnologias inovadoras, como <strong>Rust</strong> e o ecossistema <strong>Tauri</strong>.</li>
+                        </ul>
+                        
+                        <ul class="styled-list lang-en">
+                            <li>Autonomous development of a cross-platform application focusing on user experience and performance.</li>
+                            <li>Implementation of robust server-side logic and APIs using <strong>Node.js</strong> and relational database management (<strong>SQL</strong>).</li>
+                            <li>Exploration and integration of innovative technologies, such as <strong>Rust</strong> and the <strong>Tauri</strong> ecosystem.</li>
+                        </ul>
+                    </div>
+
                 </div>
                 <div class="qr-container">
                     <img src="qr.png" alt="QR code">
@@ -473,15 +499,16 @@
                 <span class="skill-tag">SQL</span>
             </div>
 
-            <h3 class="skills-category-title lang-pt"><i class="fas fa-layer-group"></i> Frameworks & Ferramentas</h3>
-            <h3 class="skills-category-title lang-en"><i class="fas fa-layer-group"></i> Frameworks & Tools</h3>
+            <h3 class="skills-category-title lang-pt"><i class="fas fa-layer-group"></i> Frameworks & Metodologias</h3>
+            <h3 class="skills-category-title lang-en"><i class="fas fa-layer-group"></i> Frameworks & Methodologies</h3>
             
             <div class="skills-container">
-                <span class="skill-tag">Tauri Framework</span>
+                <span class="skill-tag">Metodologia Scrum</span>
+                <span class="skill-tag">Trabalho Remoto / Ágil</span>
                 <span class="skill-tag">Git / GitHub</span>
+                <span class="skill-tag">Tauri Framework</span>
                 <span class="skill-tag">RESTful APIs</span>
                 <span class="skill-tag">Sistemas SAP (ERP)</span>
-                <span class="skill-tag">Trabalho Remoto / Ágil</span>
             </div>
         </section>
 
