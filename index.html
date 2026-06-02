@@ -264,15 +264,40 @@
 
         .item { margin-bottom: 30px; }
         .item:last-child { margin-bottom: 0; }
+        
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             margin-bottom: 5px;
         }
+        
         .item-title { font-weight: 600; font-size: 1.1rem; }
         .item-date { font-size: 0.9rem; color: var(--primary-color); font-weight: 600; }
         .item-subtitle { font-style: italic; font-size: 0.95rem; color: gray; margin-bottom: 10px;}
+
+        /* Estilo para links de projetos no cabeçalho */
+        .link-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            background-color: var(--primary-color);
+            color: #fff !important;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-decoration: none;
+            margin-left: 10px;
+            font-weight: 600;
+            vertical-align: middle;
+            transition: var(--transition);
+        }
+
+        .link-badge:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
         /* ----- EDUCAÇÃO COM LOGOTIPOS ----- */
         .item-with-logo {
@@ -348,6 +373,7 @@
             .photo-container, .logo-thumbnail { margin: 0 auto 15px auto; }
             .item-with-logo { border-left: none; border-top: 4px solid var(--secondary-color); }
             .item-header { flex-direction: column; align-items: center; }
+            .link-badge { margin-top: 10px; margin-left: 0; }
             .controls-container { position: relative; justify-content: flex-end; margin-bottom: 20px;}
         }
     </style>
@@ -425,14 +451,13 @@
 
                     <div class="item" style="margin-bottom: 40px; border-bottom: 1px solid var(--accent-color); padding-bottom: 30px;">
                         <div class="item-header">
-                            <span class="item-title lang-pt">Desenvolvedora Full-Stack: Matcha Garden
-                            <a href="https://github.com/catmat111/cute-timer-app/releases/tag/v1.0.0" target="_blank"><i class="fab fa-linkedin"></i>projeto</a>
-                            </span>
-                            <span class="item-title lang-en">Full-Stack Developer: Matcha Garden
-                            <a href="https://github.com/catmat111/cute-timer-app/releases/tag/v1.0.0" target="_blank"><i class="fab fa-linkedin"></i>project</a>
-                            </span>
-                            
-                            
+                            <div>
+                                <span class="item-title lang-pt">Desenvolvedora Full-Stack: Matcha Garden</span>
+                                <a href="https://github.com/catmat111/cute-timer-app/releases/tag/v1.0.0" target="_blank" class="link-badge lang-pt"><i class="fab fa-github"></i> Ver Projeto</a>
+                                
+                                <span class="item-title lang-en">Full-Stack Developer: Matcha Garden</span>
+                                <a href="https://github.com/catmat111/cute-timer-app/releases/tag/v1.0.0" target="_blank" class="link-badge lang-en"><i class="fab fa-github"></i> View Project</a>
+                            </div>
                             <span class="item-date">2025 - 2026</span>
                         </div>
                         <div class="item-subtitle lang-pt">Projeto Independente | Tecnologias Web Modernas</div>
