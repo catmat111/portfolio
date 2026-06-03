@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículo | Catarina Pereira de Matos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -48,9 +48,10 @@
             padding: 40px 20px;
         }
 
+        /* ----- HEADER ----- */
         header {
             text-align: left;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             position: relative;
         }
 
@@ -61,9 +62,9 @@
         }
 
         .photo-container {
-            flex: 0 0 150px;
-            width: 150px;
-            height: 150px;
+            flex: 0 0 140px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             overflow: hidden;
             border: 4px solid var(--accent-color);
@@ -76,28 +77,28 @@
             object-fit: cover;
         }
 
-        .header-text {
-            flex: 1;
-        }
+        .header-text { flex: 1; }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            line-height: 1.2;
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            font-weight: 300;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
         }
 
         .contact-info {
             display: flex;
             justify-content: flex-start;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .contact-info a {
@@ -106,14 +107,8 @@
             transition: var(--transition);
         }
 
-        .contact-info a:hover {
-            color: var(--primary-color);
-        }
-
-        .contact-info i {
-            margin-right: 5px;
-            color: var(--primary-color);
-        }
+        .contact-info a:hover { color: var(--primary-color); }
+        .contact-info i { margin-right: 5px; color: var(--primary-color); }
 
         /* ----- CONTROLS (TEMA E IDIOMA) ----- */
         .controls-container {
@@ -135,156 +130,106 @@
             font-weight: bold;
         }
 
-        .icon-btn:hover {
-            color: var(--primary-color);
-            transform: scale(1.1);
-        }
+        .icon-btn:hover { color: var(--primary-color); transform: scale(1.1); }
         
         .lang-btn {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-family: 'Inter', sans-serif;
             border: 2px solid var(--text-color);
             border-radius: 5px;
             padding: 2px 6px;
         }
-        
-        .lang-btn:hover {
-            border-color: var(--primary-color);
-        }
+        .lang-btn:hover { border-color: var(--primary-color); }
 
         /* ----- CLASSES DE IDIOMA ----- */
-        .lang-en {
-            display: none;
-        }
-        
-        [data-lang="en"] .lang-en {
-            display: inline-block;
-        }
+        .lang-en { display: none; }
+        [data-lang="en"] .lang-en { display: inline-block; }
         [data-lang="en"] span.lang-en, [data-lang="en"] i.lang-en, [data-lang="en"] strong.lang-en { display: inline; }
         [data-lang="en"] p.lang-en, [data-lang="en"] div.lang-en, [data-lang="en"] h2.lang-en, [data-lang="en"] h3.lang-en, [data-lang="en"] li.lang-en { display: block; }
         [data-lang="en"] li.lang-en { display: list-item; }
-        
-        [data-lang="en"] .lang-pt {
-            display: none !important;
-        }
+        [data-lang="en"] .lang-pt { display: none !important; }
 
+        /* ----- SECTIONS ----- */
         section {
             background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             transition: var(--transition);
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--secondary-color);
             border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 10px;
+            padding-bottom: 8px;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        /* ----- SECÇÃO TURÍSTICA (POLAROIDS) ----- */
-        .tourist-container {
+        /* ----- COMPETÊNCIAS / SKILLS ----- */
+        .skills-category-title {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin: 15px 0 10px 0;
+            font-weight: 600;
+        }
+
+        .skills-container {
             display: flex;
-            justify-content: center;
-            gap: 40px;
             flex-wrap: wrap;
-            padding: 20px 0;
+            gap: 8px;
+            margin-bottom: 10px;
         }
 
-        .polaroid {
-            background-color: #fff;
-            padding: 15px 15px 25px 15px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            width: 220px;
-            text-align: center;
-            border-radius: 2px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .skill-tag {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: default;
+            border: 1px solid transparent;
         }
 
-        [data-theme="dark"] .polaroid {
-            background-color: #f0f0f0; 
-            box-shadow: 0 6px 12px rgba(0,0,0,0.5);
-        }
-
-        .polaroid:nth-child(1) { transform: rotate(-4deg); }
-        .polaroid:nth-child(2) { transform: rotate(5deg); }
-
-        .polaroid img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border: 1px solid #ddd;
-        }
-
-        .polaroid p {
-            font-family: 'Caveat', cursive;
-            font-size: 1.5rem;
-            color: #222;
-            margin-top: 15px;
-            line-height: 1;
-        }
+        [data-theme="dark"] .skill-tag { border: 1px solid #2a2a2a; }
 
         /* ----- PROJETOS E EXPERIÊNCIA ----- */
         .project-item-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 30px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid var(--accent-color);
-            padding-bottom: 20px;
+            margin-bottom: 25px;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 15px;
         }
-        
-        .project-item-container:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .qr-container {
-            flex: 0 0 120px;
-            text-align: center;
-            border: 2px solid var(--accent-color);
-            border-radius: 10px;
-            padding: 10px;
-            background-color: var(--inner-card-bg);
-            margin-top: 5px;
-        }
-
-        .qr-container img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-        }
-
-        .item { margin-bottom: 30px; }
-        .item:last-child { margin-bottom: 0; }
+        .project-item-container:last-child { margin-bottom: 0; }
         
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
         }
         
-        .item-title { font-weight: 600; font-size: 1.1rem; }
-        .item-date { font-size: 0.9rem; color: var(--primary-color); font-weight: 600; }
-        .item-subtitle { font-style: italic; font-size: 0.95rem; color: gray; margin-bottom: 10px;}
+        .item-title { font-weight: 700; font-size: 1.05rem; }
+        .item-date { font-size: 0.85rem; color: var(--primary-color); font-weight: 600; }
 
-        /* Estilo para links de projetos no cabeçalho */
+        p.project-desc {
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+
         .link-badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.75rem;
+            gap: 5px;
+            font-size: 0.7rem;
             background-color: var(--primary-color);
             color: #fff !important;
-            padding: 4px 10px;
+            padding: 3px 8px;
             border-radius: 12px;
             text-decoration: none;
             margin-left: 10px;
@@ -292,98 +237,54 @@
             vertical-align: middle;
             transition: var(--transition);
         }
-
         .link-badge:hover {
             background-color: var(--secondary-color);
             transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* ----- EDUCAÇÃO COM LOGOTIPOS ----- */
+        /* ----- EDUCAÇÃO ----- */
         .item-with-logo {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             background-color: var(--inner-card-bg);
             padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid var(--secondary-color);
-            margin-bottom: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid var(--accent-color);
         }
+        .item-with-logo:last-child { margin-bottom: 0; }
 
         .logo-thumbnail {
-            width: 70px;
-            height: 70px;
+            width: 50px;
+            height: 50px;
             object-fit: contain;
             flex-shrink: 0;
             background-color: #fff;
             padding: 5px;
-            border-radius: 8px;
-            border: 1px solid var(--accent-color);
+            border-radius: 6px;
         }
         .item-content { flex: 1; }
-
-        /* ----- COMPETÊNCIAS E LISTAS ----- */
-        .skills-category-title {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            margin: 25px 0 15px 0;
-            font-weight: 600;
-            border-bottom: 1px dashed #ccc;
-            padding-bottom: 5px;
-        }
-        [data-theme="dark"] .skills-category-title { border-bottom: 1px dashed #444; }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .skill-tag {
-            background-color: var(--accent-color);
-            color: var(--text-color);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: default;
-        }
-
-        ul.styled-list { list-style-type: none; }
-        ul.styled-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-        }
-        ul.styled-list li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
+        .item-subtitle { font-size: 0.9rem; color: gray; }
 
         /* Responsividade */
         @media (max-width: 600px) {
-            .header-content, .project-item-container, .item-with-logo {
-                flex-direction: column; text-align: center;
-            }
+            .header-content { flex-direction: column; text-align: center; }
             .contact-info { justify-content: center; }
-            .photo-container, .logo-thumbnail { margin: 0 auto 15px auto; }
-            .item-with-logo { border-left: none; border-top: 4px solid var(--secondary-color); }
-            .item-header { flex-direction: column; align-items: center; }
-            .link-badge { margin-top: 10px; margin-left: 0; }
+            .photo-container { margin: 0 auto 10px auto; }
+            .item-header { flex-direction: column; align-items: flex-start; }
+            .link-badge { margin-top: 5px; margin-left: 0; }
             .controls-container { position: relative; justify-content: flex-end; margin-bottom: 20px;}
+            .item-with-logo { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
-<body data-lang="pt">
+<body data-lang="en">
 
     <div class="container">
         <header>
             <div class="controls-container">
-                <button class="icon-btn lang-btn" id="lang-toggle" title="Mudar Idioma / Change Language">EN</button>
+                <button class="icon-btn lang-btn" id="lang-toggle" title="Mudar Idioma / Change Language">PT</button>
                 <button class="icon-btn theme-toggle" id="theme-toggle" title="Alternar Modo Escuro/Claro">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -391,20 +292,20 @@
             
             <div class="header-content">
                 <div class="photo-container">
-                    <img src="eu.jpg" alt="Foto de Catarina Pereira de Matos">
+                    <img src="eu.jpg" alt="Catarina Pereira de Matos">
                 </div>
                 <div class="header-text">
                     <h1>Catarina Pereira de Matos</h1>
                     <p class="subtitle">
-                        <span class="lang-pt">Engenheira Informática | Full-Stack Developer | React</span>
-                        <span class="lang-en">Software Engineer | Full-Stack Developer | React</span>
+                        <span class="lang-pt">Engenheira de Software & Dados</span>
+                        <span class="lang-en">Software & Data Engineer</span>
                     </p>
                     <div class="contact-info">
                         <span><i class="fas fa-map-marker-alt"></i> Caldas da Rainha, Portugal</span>
                         <a href="tel:+351911797156"><i class="fas fa-phone"></i> +351 911 797 156</a>
                         <a href="mailto:catarina12112.cm@gmail.com"><i class="fas fa-envelope"></i> catarina12112.cm@gmail.com</a>
-                        <a href="https://www.linkedin.com/in/catarina-pereira-0858b713a/" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/catarina-pereira-0858b713a/</a>
-                        <a href="https://github.com/catmat111" target="_blank"><i class="fab fa-github"></i> github.com/catmat111</a>
+                        <a href="https://www.linkedin.com/in/catarina-pereira-0858b713a/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/catmat111" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
             </div>
@@ -414,125 +315,94 @@
             <h2 class="lang-pt"><i class="fas fa-user"></i> Resumo Profissional</h2>
             <h2 class="lang-en"><i class="fas fa-user"></i> Professional Summary</h2>
             
-            <p class="lang-pt">Engenheira Informática apaixonada pelo desenvolvimento de software, com especial foco em tecnologias web. Tenho um enorme gosto por criar interfaces dinâmicas e reativas em <strong>React</strong> e desenvolver arquiteturas robustas de <em>backend</em>. Sou uma profissional dedicada e proativa, em busca de <strong>oportunidades 100% remotas</strong> onde possa contribuir para equipas inovadoras, aplicando os meus conhecimentos em Full-Stack e continuando a evoluir num ambiente tecnológico estimulante e ágil.</p>
-            <p class="lang-en">Software Engineer passionate about software development, with a special focus on web technologies. I deeply enjoy building dynamic and responsive interfaces using <strong>React</strong> and developing robust <em>backend</em> architectures. I am a dedicated and proactive professional seeking <strong>100% remote opportunities</strong> where I can contribute to innovative teams, applying my Full-Stack expertise and continuing to grow in a fast-paced, agile environment.</p>
+            <p class="lang-pt">Engenheira Informática com experiência em projetos web full-stack, desenvolvendo interfaces em React e lógicas de backend com Node.js, SQL, Python, Rust e C#. Com o objetivo de integrar funções de <strong>Engenharia de Dados (Data Engineer)</strong>, trago experiência prática com SQL, Python e resolução estruturada de problemas em equipas ágeis e projetos independentes.</p>
+            
+            <p class="lang-en">Software Engineer with experience across full-stack web projects, building interfaces in React and backend logic with Node.js, SQL, Python, Rust, and C#. Targeting <strong>Data Engineer</strong> roles, I bring hands-on work with SQL, Python, and structured problem-solving in agile team and independent projects.</p>
+        </section>
+
+        <section id="skills">
+            <h2 class="lang-pt"><i class="fas fa-code"></i> Competências Técnicas</h2>
+            <h2 class="lang-en"><i class="fas fa-code"></i> Technical Skills</h2>
+            
+            <h3 class="skills-category-title lang-pt">Dados & Backend</h3>
+            <h3 class="skills-category-title lang-en">Data & Backend</h3>
+            <div class="skills-container">
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Rust</span>
+            </div>
+
+            <h3 class="skills-category-title lang-pt">Desenvolvimento Web (Frontend & Ferramentas)</h3>
+            <h3 class="skills-category-title lang-en">Web Development (Frontend & Tools)</h3>
+            <div class="skills-container">
+                <span class="skill-tag">Git / GitHub</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Vite</span>
+                <span class="skill-tag">Tauri</span>
+            </div>
+
+            <h3 class="skills-category-title lang-pt">Metodologias & Negócio</h3>
+            <h3 class="skills-category-title lang-en">Methodologies & Business</h3>
+            <div class="skills-container">
+                <span class="skill-tag">Sistemas SAP (ERP)</span>
+                <span class="skill-tag">Metodologia Scrum</span>
+                <span class="skill-tag">NVIDIA Isaac Sim</span>
+            </div>
         </section>
 
         <section id="experience">
-            <h2 class="lang-pt"><i class="fas fa-briefcase"></i> Experiência & Projetos de Desenvolvimento</h2>
-            <h2 class="lang-en"><i class="fas fa-briefcase"></i> Experience & Development Projects</h2>
+            <h2 class="lang-pt"><i class="fas fa-briefcase"></i> Experiência & Projetos Principais</h2>
+            <h2 class="lang-en"><i class="fas fa-briefcase"></i> Experience & Key Projects</h2>
             
-            <div class="project-item-container" style="border-bottom: none; margin-bottom: 0;">
-                <div class="project-text" style="flex: 1;">
-                    
-                    <div class="item">
-                        <div class="item-header">
-                            <span class="item-title lang-pt">Desenvolvedora Full-Stack: Projeto FormDocs</span>
-                            <span class="item-title lang-en">Full-Stack Developer: FormDocs Project</span>
-                            <span class="item-date">2025 - 2026</span>
-                        </div>
-                        <div class="item-subtitle lang-pt">Projeto Académico | Metodologia Scrum (Equipa de 6)</div>
-                        <div class="item-subtitle lang-en">Academic Project | Scrum Methodology (Team of 6)</div>
-                        
-                        <ul class="styled-list lang-pt">
-                            <li>Desenvolvimento colaborativo de uma aplicação web completa (<em>frontend</em> e <em>backend</em>) num ambiente ágil, utilizando a metodologia <strong>Scrum</strong>.</li>
-                            <li>Trabalho dinâmico numa equipa de 6 pessoas, garantindo a entrega contínua de funcionalidades e a resolução eficiente de problemas.</li>
-                            <li>Criação de interfaces interativas e altamente responsivas em <strong>React</strong> e <strong>TypeScript</strong>.</li>
-                            <li>Adoção de boas práticas de código e ferramentas de controlo de versões (Git/GitHub) essenciais para fluxos de trabalho remotos.</li>
-                        </ul>
-                        
-                        <ul class="styled-list lang-en">
-                            <li>Collaborative development of a full-stack web application in an agile environment, utilizing <strong>Scrum</strong> methodology.</li>
-                            <li>Dynamic work within a team of 6, ensuring continuous feature delivery and efficient problem-solving.</li>
-                            <li>Creation of highly interactive and responsive interfaces using <strong>React</strong> and <strong>TypeScript</strong>.</li>
-                            <li>Adoption of clean code practices and version control tools (Git/GitHub) essential for remote workflows.</li>
-                        </ul>
-                    </div>
-
-                    <div class="item" style="margin-bottom: 40px; border-bottom: 1px solid var(--accent-color); padding-bottom: 30px;">
-                        <div class="item-header">
-                            <div>
-                                <span class="item-title lang-pt">Desenvolvedora Full-Stack: Matcha Garden</span>                            
-                                <span class="item-title lang-en">Full-Stack Developer: Matcha Garden</span>
-                                <a href="https://github.com/catmat111/cute-timer-app/releases/tag/v1.0.0" target="_blank" class="link-badge lang-en"><i class="fab fa-github"></i> View Project</a>
-                            </div>
-                            <span class="item-date">2025 - 2026</span>
-                        </div>
-                        <div class="item-subtitle lang-pt">Projeto Independente | Tecnologias Web Modernas</div>
-                        <div class="item-subtitle lang-en">Independent Project | Modern Web Technologies</div>
-                        
-                        <ul class="styled-list lang-pt">
-                            <li>Desenvolvimento autónomo de uma aplicação multiplataforma focada na performance e na experiência do utilizador.</li>
-                            <li>Implementação de lógicas de servidor e APIs robustas utilizando <strong>Node.js</strong> e gestão de bases de dados relacionais (<strong>SQL</strong>).</li>
-                            <li>Exploração e integração de tecnologias inovadoras, como <strong>Rust</strong> e o ecossistema <strong>Tauri</strong>.</li>
-                        </ul>
-                        
-                        <ul class="styled-list lang-en">
-                            <li>Autonomous development of a cross-platform application focusing on user experience and performance.</li>
-                            <li>Implementation of robust server-side logic and APIs using <strong>Node.js</strong> and relational database management (<strong>SQL</strong>).</li>
-                            <li>Exploration and integration of innovative technologies, such as <strong>Rust</strong> and the <strong>Tauri</strong> ecosystem.</li>
-                        </ul>
-                    </div>
-
-                    <div class="item">
-                        <div class="item-header">
-                            <div>
-                                <span class="item-title lang-pt">Desenvolvedora Web: Biblioteca Digital Pessoal</span>
-                                <span class="item-title lang-en">Web Developer: Personal Digital Library</span>
-                                 <a href="https://github.com/catmat111/bilioteca" target="_blank" class="link-badge lang-en"><i class="fab fa-github"></i> View Project</a>
-                            </div>
-                            <span class="item-date">2026</span>
-                        </div>
-                        <div class="item-subtitle lang-pt">Projeto Independente | Gestão de Leitura</div>
-                        <div class="item-subtitle lang-en">Independent Project | Reading Management</div>
-                        
-                        <ul class="styled-list lang-pt">
-                            <li>Desenvolvimento de uma aplicação web para acompanhamento de histórico de leitura e partilha de reviews literárias (foco em fantasia e clássicos).</li>
-                            <li>Criação de uma interface de utilizador moderna e interativa utilizando <strong>React</strong> e <strong>Vite</strong> para garantir carregamento rápido e otimização de performance.</li>
-                            <li>Implementação de funcionalidades personalizadas de rastreamento de progresso e organização da coleção de livros.</li>
-                        </ul>
-                        
-                        <ul class="styled-list lang-en">
-                            <li>Development of a web application to track reading history and share literary reviews (focusing on fantasy and classics).</li>
-                            <li>Creation of a modern and interactive user interface using <strong>React</strong> and <strong>Vite</strong> to ensure fast loading and performance optimization.</li>
-                            <li>Implementation of custom features for progress tracking and book collection organization.</li>
-                        </ul>
-                    </div>
-
+            <div class="project-item-container">
+                <div class="item-header">
+                    <span class="item-title lang-pt">Desenvolvedora Full-Stack | Projeto FormDocs</span>
+                    <span class="item-title lang-en">Full-Stack Developer | FormDocs Project</span>
+                    <span class="item-date">2025 - 2026</span>
                 </div>
+                <p class="project-desc lang-pt">Colaborei numa aplicação full-stack numa equipa Scrum de 6 pessoas, contribuindo para o front-end em React/TypeScript, adoção de boas práticas de código e suporte ao fluxo de trabalho baseado em Git/GitHub para entrega contínua.</p>
+                <p class="project-desc lang-en">Collaborated on a full-stack application in a Scrum team of 6, contributing React/TypeScript front-end work, clean code practices, and Git/GitHub-based workflow support for continuous delivery.</p>
             </div>
 
             <div class="project-item-container">
-                <div class="project-text" style="flex: 1;">
-                    <div class="item">
-                        <div class="item-header">
-                            <span class="item-title lang-pt">Engenharia de Software & Robótica: Deteção de Poluição</span>
-                            <span class="item-title lang-en">Software Engineering & Robotics: Pollution Detection</span>
-                            <span class="item-date">2025 - 2026</span>
-                        </div>
-                        <div class="item-subtitle lang-pt">Projeto Final de Licenciatura | Instituto Politécnico de Tomar</div>
-                        <div class="item-subtitle lang-en">Final Degree Project | Polytechnic Institute of Tomar</div>
-                        
-                        <ul class="styled-list lang-pt">
-                            <li>Desenvolvimento da simulação de um peixe robótico para deteção de poluição aquática, utilizando o <strong>NVIDIA Isaac Sim</strong>.</li>
-                            <li>Programação de algoritmos complexos de movimento, análise de dados e resposta ambiental utilizando <strong>Python</strong> e <strong>C#</strong>.</li>
-                            <li>Integração de mecânicas de fluidos e tratamento de dados numéricos em ambientes de simulação avançada.</li>
-                        </ul>
-                        
-                        <ul class="styled-list lang-en">
-                            <li>Developed the simulation of a robotic fish for aquatic pollution detection, utilizing <strong>NVIDIA Isaac Sim</strong>.</li>
-                            <li>Programmed complex algorithms for movement, data analysis, and environmental response using <strong>Python</strong> and <strong>C#</strong>.</li>
-                            <li>Integrated fluid mechanics and numerical data processing within advanced simulation environments.</li>
-                        </ul>
+                <div class="item-header">
+                    <div>
+                        <span class="item-title lang-pt">Desenvolvedora Full-Stack | Matcha Garden</span>
+                        <span class="item-title lang-en">Full-Stack Developer | Matcha Garden</span>
+                        <a href="https://github.com/catmat111/cute-timer-app/releases/tag/v1.0.0" target="_blank" class="link-badge lang-en"><i class="fab fa-github"></i> Source</a>
                     </div>
+                    <span class="item-date">2025 - 2026</span>
                 </div>
-                <div class="qr-container">
-                    <img src="qr.png" alt="QR code Simulação NVIDIA Isaac Sim">
-                    <p class="lang-pt" style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600; margin-top: 5px;">Ver Simulação</p>
-                    <p class="lang-en" style="font-size: 0.8rem; color: var(--primary-color); font-weight: 600; margin-top: 5px;">View Simulation</p>
-                </div>
+                <p class="project-desc lang-pt">Construí uma aplicação multiplataforma utilizando Node.js, SQL, Rust e Tauri, focando-me na lógica de servidor, desenvolvimento de APIs e implementação altamente orientada para a performance.</p>
+                <p class="project-desc lang-en">Built a cross-platform application with Node.js, SQL, Rust, and Tauri, focusing on server-side logic, API development, and performance-oriented implementation.</p>
             </div>
 
+            <div class="project-item-container">
+                <div class="item-header">
+                    <span class="item-title lang-pt">Engenharia de Software & Dados | Deteção de Poluição</span>
+                    <span class="item-title lang-en">Software & Data Engineering | Pollution Detection</span>
+                    <span class="item-date">2025 - 2026</span>
+                </div>
+                <p class="project-desc lang-pt">Implementei a lógica de simulação para deteção de poluição aquática utilizando NVIDIA Isaac Sim, Python e C#, estruturando algoritmos de movimento, análise de dados e comportamento de resposta ambiental.</p>
+                <p class="project-desc lang-en">Implemented simulation logic for aquatic pollution detection using NVIDIA Isaac Sim, Python, and C#, including movement algorithms, data analysis, and environmental response behavior.</p>
+            </div>
+
+            <div class="project-item-container">
+                <div class="item-header">
+                    <div>
+                        <span class="item-title lang-pt">Desenvolvedora Web | Biblioteca Digital Pessoal</span>
+                        <span class="item-title lang-en">Web Developer | Personal Digital Library</span>
+                        <a href="https://github.com/catmat111/bilioteca" target="_blank" class="link-badge lang-en"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                    <span class="item-date">2026</span>
+                </div>
+                <p class="project-desc lang-pt">Desenvolvi uma aplicação web utilizando React e Vite, adicionando funcionalidades de rastreamento de progresso e organização de bases de dados locais, garantindo interações responsivas.</p>
+                <p class="project-desc lang-en">Developed a web application using React and Vite, adding progress tracking and collection organization features while supporting fast-loading, responsive user interactions.</p>
+            </div>
         </section>
 
         <section id="education">
@@ -542,12 +412,11 @@
             <div class="item-with-logo">
                 <img src="ipt_tomar.png" alt="Logo IPT" class="logo-thumbnail">
                 <div class="item-content">
-                    <div class="item-header">
-                        <span class="item-title lang-pt">Licenciatura em Engenharia Informática</span>
-                        <span class="item-title lang-en">Bachelor's Degree in Computer Engineering</span>
-                        
-                        <span class="item-date lang-pt">Conclusão: 2026</span>
-                        <span class="item-date lang-en">Completion: 2026</span>
+                    <div class="item-header" style="margin-bottom: 2px;">
+                        <span class="item-title lang-pt">Pós-Graduação em Sistemas de Gestão Empresarial (SAP)</span>
+                        <span class="item-title lang-en">Postgraduate Degree in Enterprise Management Systems (SAP)</span>
+                        <span class="item-date lang-pt">Concluída</span>
+                        <span class="item-date lang-en">Completed</span>
                     </div>
                     <div class="item-subtitle lang-pt">Instituto Politécnico de Tomar</div>
                     <div class="item-subtitle lang-en">Polytechnic Institute of Tomar</div>
@@ -557,65 +426,14 @@
             <div class="item-with-logo">
                 <img src="ipt_tomar.png" alt="Logo IPT" class="logo-thumbnail">
                 <div class="item-content">
-                    <div class="item-header">
-                        <span class="item-title lang-pt">Pós-Graduação em Sistemas de Gestão Empresarial (SAP)</span>
-                        <span class="item-title lang-en">Postgraduate Degree in Enterprise Management Systems (SAP)</span>
-                        
-                        <span class="item-date lang-pt">Concluída</span>
-                        <span class="item-date lang-en">Completed</span>
+                    <div class="item-header" style="margin-bottom: 2px;">
+                        <span class="item-title lang-pt">Licenciatura em Engenharia Informática</span>
+                        <span class="item-title lang-en">Bachelor's Degree in Computer Engineering</span>
+                        <span class="item-date lang-pt">Conclusão: 2026</span>
+                        <span class="item-date lang-en">Completion: 2026</span>
                     </div>
                     <div class="item-subtitle lang-pt">Instituto Politécnico de Tomar</div>
                     <div class="item-subtitle lang-en">Polytechnic Institute of Tomar</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2 class="lang-pt"><i class="fas fa-code"></i> Competências Técnicas</h2>
-            <h2 class="lang-en"><i class="fas fa-code"></i> Technical Skills</h2>
-            
-            <h3 class="skills-category-title lang-pt"><i class="fas fa-laptop-code"></i> Frontend & Backend</h3>
-            <h3 class="skills-category-title lang-en"><i class="fas fa-laptop-code"></i> Frontend & Backend</h3>
-            
-            <div class="skills-container">
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Vite</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Rust</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">SQL</span>
-            </div>
-
-            <h3 class="skills-category-title lang-pt"><i class="fas fa-layer-group"></i> Frameworks & Metodologias</h3>
-            <h3 class="skills-category-title lang-en"><i class="fas fa-layer-group"></i> Frameworks & Methodologies</h3>
-            
-            <div class="skills-container">
-                <span class="skill-tag">Metodologia Scrum</span>
-                <span class="skill-tag">Trabalho Remoto / Ágil</span>
-                <span class="skill-tag">Git / GitHub</span>
-                <span class="skill-tag">Tauri Framework</span>
-                <span class="skill-tag">NVIDIA Isaac Sim</span>
-                <span class="skill-tag">Sistemas SAP (ERP)</span>
-            </div>
-        </section>
-
-        <section id="percurso">
-            <h2 class="lang-pt"><i class="fas fa-map-marked-alt"></i> O Meu Percurso</h2>
-            <h2 class="lang-en"><i class="fas fa-map-marked-alt"></i> My Journey</h2>
-            
-            <div class="tourist-container">
-                <div class="polaroid">
-                    <img src="caldas.jpg" alt="Caldas da Rainha">
-                    <p class="lang-pt">Caldas da Rainha <br><span style="font-size: 1rem; color: #666;">(A minha casa)</span></p>
-                    <p class="lang-en">Caldas da Rainha <br><span style="font-size: 1rem; color: #666;">(My home)</span></p>
-                </div>
-                <div class="polaroid">
-                    <img src="tomar.jpg" alt="Tomar">
-                    <p class="lang-pt">Tomar <br><span style="font-size: 1rem; color: #666;">(Onde me formei)</span></p>
-                    <p class="lang-en">Tomar <br><span style="font-size: 1rem; color: #666;">(Where I graduated)</span></p>
                 </div>
             </div>
         </section>
@@ -653,9 +471,8 @@
 
         // --- LOGIC PARA O IDIOMA PT/EN ---
         const langToggleBtn = document.getElementById('lang-toggle');
-        const currentLang = localStorage.getItem('language') || 'pt';
+        const currentLang = localStorage.getItem('language') || 'en'; // Definido para Inglês por omissão para candidaturas de Data Engineer
         
-        // Define o idioma inicial no body
         document.body.setAttribute('data-lang', currentLang);
         langToggleBtn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
         document.documentElement.lang = currentLang === 'pt' ? 'pt-PT' : 'en';
